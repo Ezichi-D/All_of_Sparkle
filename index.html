@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sparkle - Voiceover & Broadcasting Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <h2>SPARKLE</h2>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience-skills">Experience</a></li>
+        <li><a href="#projects">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO / INTRO -->
+   <header>
+  <section class="hero-section">
+    <img src="4.jpg" alt="">
+    <h1>Hi, I'm Sparkle</h1>
+    <p>Voice‑over Artist • Broadcaster • Storyteller</p>
+  </section>
+   </header>
+
+  <!-- ABOUT ME -->
+  <section id="about" class="about-me-section">
+    <div class="about-container">
+
+      <!-- Video -->
+      <div class="about-video">
+        <video controls poster="sparklegrad1.jpg">
+          <source src="aboutme.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <!-- Text -->
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>
+          Hi there — I’m <strong>Sparkle</strong>.<br><br>
+          I’m a broadcaster and voice‑over artist who loves stories, conversations, and creating audio that connects with people.<br><br>
+          I’ve worked in radio, television, and content production — from early training at TVC Communications to content writing at Max FM 102.3, and hosting and production roles at City FM 105.1 and Crowther 88.5FM. I’ve hosted shows, voiced promos, written scripts, and presented news — always aiming to communicate clearly and with heart.<br><br>
+          I also run the <strong>“What’s Trending” podcast</strong>, where I explore pop culture, social topics, and stories that matter. Being a <strong>law graduate</strong> has also helped shape how I speak, think, and express ideas — with clarity and confidence.<br><br>
+          This site is a snapshot of that journey so far — explore my work below!
+        </p>
+        <a href="#projects" class="btn-primary">See My Work ↓</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXPERIENCE & SKILLS -->
+  <section id="experience-skills" class="exp-skills-section">
+    <div class="container">
+      <h2>Experience & Skills</h2>
+
+      <!-- EXPERIENCE -->
+      <div class="experience-list">
+        <div class="experience-item">
+          <h3>Crowther 88.5FM — Show Presenter</h3>
+          <p>Hosted and co‑hosted shows, voiced promos, and presented news, strengthening my live on‑air skills.</p>
+        </div>
+
+        <div class="experience-item">
+          <h3>City FM 105.1 — Production & Intern Roles</h3>
+          <p>Produced weekly segments, handled commercial voice‑overs, and assisted with daily news production.</p>
+        </div>
+
+        <div class="experience-item">
+          <h3>“What’s Trending” Podcast — Host & Producer</h3>
+          <p>Create, record, edit, and promote each episode independently — engaging listeners with meaningful conversations.</p>
+        </div>
+      </div>
+
+      <!-- SKILLS LIST -->
+      <div class="skills-list">
+        <h3>Key Skills</h3>
+        <ul>
+          <li>Voice Over Production</li>
+          <li>Radio & Show Hosting</li>
+          <li>Scriptwriting & Storytelling</li>
+          <li>News Writing & Presentation</li>
+          <li>Public Speaking & Debating</li>
+          <li>Fluent in English</li>
+          <li>Adobe Audition & Microsoft Office</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ..........Portfolio.........         -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="container">
+            <h2 class="sub-title">My Portfolio</h2>
+        <div class="lead">
+            <div>
+                <i class="fa-brands fa-readme"></i>
+                <h3>WRITING</h3>
+                <p></p>
+                <a href="writing.html">Read...</a>
+            </div>
+                <div>
+                    <i class="fa-solid fa-podcast"></i>
+                <h3>PODCAST</h3>
+                <p></p>
+                <a href="podcast.html">Explore...</a>
+            </div>
+        </div>
+
+
+        </div>
+    </section>
+
+  <!-- CONTACT FORM -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2>Contact Me</h2>
+
+      <form id="contactForm">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      
+      <p id="status"></p>
+    </div>
+  </section>
+
+  <!-- JAVASCRIPT FORM HANDLER -->
+  <script>
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('status');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const data = {
+        name: form.name.value,
+        email: form.email.value,
+        message: form.message.value
+      };
+
+      fetch('PASTE_YOUR_GOOGLE_SCRIPT_URL_HERE', {
+        method: 'POST',
+        body: JSON.stringify(data)
+      })
+      .then(resp => resp.json())
+      .then(res => {
+        if(res.result === "success"){
+          status.innerText = "Message sent! Thank you.";
+          form.reset();
+        } else {
+          status.innerText = "Error — try again later.";
+        }
+      })
+      .catch(err => {
+        status.innerText = "Error — try again later.";
+      });
+    });
+  </script>
+
+</body>
+</html>
