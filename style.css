@@ -11,6 +11,23 @@ body {
   line-height: 1.6;
 }
 
+
+.logo a{
+   text-decoration: none;
+   font-size:   20px;
+   margin-top: -20px;
+   margin-right: 15px;
+   color: purple;
+   display: inline-block;
+   transition: transform 0.5s;
+}
+
+.logo a:hover{
+   color: violet;
+   transform: translateY(-5px);
+}
+
+
 a {
   text-decoration: none;
   color: inherit;
@@ -30,12 +47,18 @@ a {
 .nav-links {
   list-style: none;
   display: flex;
+  margin-top: -20px;
   gap: 25px;
 }
 
 .nav-links li a {
   color: unset;
   font-weight: 600;
+}
+.nav-links li a:hover {
+  color: violet;
+  transform: translateY(-5px);
+
 }
 
 /* HERO */
@@ -249,7 +272,7 @@ a {
 }
 
 #podcast .align div p a{
-   color: white;
+   color: purple;
    font-size: 15px;
    margin-left: 8px;
    text-decoration: none;
@@ -285,13 +308,13 @@ social-icons{
    text-decoration: none;
    font-size: 30px;
    margin-right: 15px;
-   color: red;
+   color: purple;
    display: inline-block;
    transition: transform 0.5s;
 }
 
 .social-icons a:hover{
-   color: rgb(146, 79, 208);
+   color: violet;
    transform: translateY(-5px);
 }
 
@@ -301,6 +324,7 @@ social-icons{
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 15px;
+
 }
 
 .contact-section button {
@@ -316,6 +340,7 @@ social-icons{
 .contact-section button:hover {
   background: violet;
 }
+
 
 /* RESPONSIVE */
 @media (max-width: 900px) {

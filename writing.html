@@ -15,7 +15,7 @@
   <nav class="navbar">
     <div class="nav-container">
       <div class="logo">
-        <h2>SPARKLE</h2>
+        <a href="index.html"><h2>SPARKLE</h2></a>
       </div>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
@@ -28,7 +28,6 @@
 
   <!-- HERO / INTRO -->
   <section class="hero-section">
-    <img src="4.jpg" alt="">
     <h1>Hi, I'm Sparkle</h1>
     <p>Voice‑over Artist • Broadcaster • Storyteller</p>
   </section>
@@ -37,9 +36,9 @@
 <div class="writing-page">
 
   <!-- Preview Page -->
-  <div class="contain" id="preview-page">
+  <div class="contain preview-layout" id="preview-page">
     <h1>Writings</h1>
-
+    <div class="story-row">
     <div class="story-preview fade" onclick="showStory(0)">
       <div class="story-title">OSIMIRI FOR TALES AND WHISPERS</div>
       <div class="story-text">
@@ -49,20 +48,75 @@
       </div>
       <div class="click-hint">(Click to read)</div>
     </div>
-
+    
+     <div class="story-preview fade" onclick="showStory(2)">
+      <img src="slave.jpeg" alt="" width="500" height="200" class="preview-img">
+      <div class="story-title">
+        What is a Slave Society?</div>
+      <div class="story-text"><small><em>April 22, 2025 | Article at Sparkle</em></small>
+        
+    </div>
+      <div class="click-hint">(Click to read)</div>
+    </div>
+    <br>
+     <div class="story-preview fade" onclick="window.location.href='https://www.instagram.com/p/DIJw2yQo1YH/?igsh=X2lsX1dreC1B'">
+      <img src="son.jpg" alt="" width="500" height="200" class="preview-img">
+      <div class="story-title">
+        Son of Moremi</div>
+      <div class="story-text">
+      <small><em>April 07, 2025 | Post on <strong>Instagram</strong></em></small>
+    </div>
+      <div class="click-hint">(Click to read)</div>
+    </div>
     <div class="story-preview fade" onclick="showStory(1)">
       <div class="story-title">TAKE A SIP OF PEACE</div>
       <div class="story-text">
         It’s so weird how the smallest thing can happen and it would set you back ten paces… all that work come crashing down.
+        <br>
+      <small><em>February 17, 2025 | Article at <strong>Sparkle</strong></em></small>      
       </div>
       <div class="click-hint">(Click to read)</div>
     </div>
+    <br>
+    <div class="story-preview fade" onclick="showStory(3)">
+      <div class="story-title">KAIMAH</div>
+      <div class="story-text">
+        Kamiah had always told that story, over and over, just never the same way twice. She’d tweak it depending on who was listening. Some days it was lighter, other days it had weight. After a while, she couldn’t keep track of which version she’d told to…
+      <br>
+      <small><em>January 11, 2025 | Article at <strong>Sparkle</strong></em></small>
+      </div>
+      <div class="click-hint">(Click to read)</div>
+    </div>
+    <div class="story-preview fade" onclick="showStory(4)">
+      <img src="frame1.jpeg" alt="" width="500" height="200" class="preview-img">
+      <div class="story-title">
+        The Frame
+      </div>
+      <div class="story-text">
+      <small><em>January 11, 2025 | Article at <strong>Sparkle</strong></em></small>
+      </div>
+      <div class="click-hint">(Click to read)</div>
+    </div>
+    <br>
+    <div class="story-preview fade" onclick="showStory(5)">
+       <img src="trees.jpeg" alt="" width="600" height="250">
+      <div class="story-title">
+To ask what right people have to a <br> 
+healthy environment is to ask what right...</div>
+      <div class="story-text">
+      <small><em>January 01, 2025 | Article at <strong>Sparkle</strong></em></small>
+      </div>
+      <div class="click-hint">(Click to read)</div>
+    </div>
+  </div>
   </div>
 
   <!-- Full Story Page -->
   <div class="contain full-story fade" id="full-story">
     <div id="story-title"></div>
+    <img id="story-image" alt="" style="display:none;">
     <div id="story-text"></div>
+
     <div class="back" onclick="showPreview()">← Back to Writings</div>
   </div>
 
@@ -72,43 +126,161 @@
 const stories = [
   {
     title: "OSIMIRI FOR TALES AND WHISPERS",
-    text: `
-If someone had told me that a day would come where I would be trending on Instablog for fighting a yellow bus conductor on third mainland bridge, I would have called them insane but unfortunately, my phone was still ringing, I’m sure my mum must have called 50 times by now, only God knows how she heard, I thought she doesn’t even use Instagram, oh wait, Jesus that means my matter has even reached Facebook, I could feel the messages pouring in from all over and all I could think about was Akin and what he would think when he sees it.
-
-I stood up and walked to the mirror in my apartment, I no longer recognized myself, this wasn’t the plan, I followed all the YouTube tutorials diligently, some said use turmeric and honey, I did just that, some even said take a bath with oats and milk, I did that too, every morning and night I applied all the products that I spent most of my salary on but still, nothing changed...`
+    text: `If someone had told me that a day would come where I would be trending on Instablog for fighting a yellow bus conductor on third mainland bridge, I would have called them insane but unfortunately, my phone was still ringing, I’m sure my mum must have called 50 times by now, only God knows how she heard, I thought she doesn’t even use Instagram, oh wait, Jesus that means my matter has even reached Facebook, I could feel the messages pouring in from all over and all I could think about was Akin and what he would think when he sees it.
+I stood up and walked to the mirror in my apartment, I no longer recognized myself, this wasn’t the plan, I followed all the YouTube tutorials diligently, some said use turmeric and honey, I did just that, some even said take a bath with oats and milk, I did that too, every morning and night I applied all the products that I spent most of my salary on but still, nothing changed. You see, nobody ever talks about how hard it is to be a lady, every day I would come online and see images of girls with the shiniest and clear skin, then take a look at my reflection in the tiny mirror, that’s always in my bag and wonder why mine was different.
+Akin was the third man to walk out of my life because of acne. We met on Instagram, where he took one look at my carefully edited pictures and concluded that I was the most beautiful girl he had ever seen. He was a dark, tall man with the most chiseled jaw I had ever come across and was the first person I would talk to when I wake up and the last person to hear my voice at night for three months. It was the best months I have had in a while, I finally felt like I had found my person and was happy with the relationship until one night, he happily said he was moving to Lagos to finally be with me, immediately we said our goodnights, tears started flowing from eyes and I began to wonder what I had done that God choose to punish me like this, I knew that one day our online relationship would come to an end but I didn’t think it would be soon, he was a tech bro living in South Africa and although we always did video calls, I knew that he would take one look at my face when he saw me and declare that he was no longer interested, so I found an hack on my phone that allowed me to add in filters while on video calls with him, he did not know that I battled with serious acne and I wanted to keep it that way.
+After I had gone through the panic and depressive state, I decided that I’m not going to let this relationship go and I need to fight for it, that strengthened my resolve so I contacted my friend Yimika, she was always someone who seemed to have all the answers to any problem and we met up for drinks, I wasted no time in sharing my situation with her and luckily, she understood and even pitied me, she told me that she doesn’t think any local remedy or skincare product would work on my face at the speed I need, but that in her village, there was this mystic stream that was capable of making any wish come true and it was also home to a river goddess called Osimiri who grants you your greatest wish and all you had to do was go there and say what you want. I admit, I did not believe her at first, like I said yimika had a lot of crazy ideas, I mean she once made me eat an owl that she killed and cooked herself because she said it would make us wiser but then she kept on talking about it and telling stories of different people who she believed the river goddess had helped.
+What she did not know is, I was desperate and ready to try anything even if I didn’t fully believe in it, so she did not need to do much convincing, we set out to go to her village in two days’ time, I prepared myself and read a lot of books on keeping your relationship strong and ensuring to fight for the love of your life, that strengthened my resolve and when the day came, I was fully ready, we set out and it was truly a journey, we got to the village and then begin to trek into an abandoned forest, we passed many strange objects and even saw a skull on a tree, at that point I was already in doubt of Yimika’s tale but we had gone too far and I needed to know that I had done everything within my power.
+Finally, yimika stopped walking, I looked ahead and saw that we were standing at the shore of a black stream, it looked like crystals were in the water and I was almost sure that I could hear music playing from a distance, she told me that I needed to go close to the water and make a wish, I approached the stream and closed my eyes and wished for the most glowing and clear skin to ever be seen and suddenly, the sky became cloudy and rain started pouring down, the thunder sounds were almost deafening, yimika immediately grabbed my hand and said we had to leave.
+The road back to lagos, was surprisingly easy and straightforward, I got home and stared at myself in the mirror, hoping the wish does come true before I slept off to Akin’s voice, I dreamt that maggots climbed my face and ate every piece of acne I had on it.
+The next morning, I woke up with a strange, unsettling feeling in my gut. Something about my reflection seemed… too perfect. I rushed to the mirror and gasped. My face was flawless. Every pimple, every scar, every imperfection had disappeared overnight, leaving my skin smooth and glowing. I almost couldn’t believe it. For a split second, I thought maybe I had finally found the miracle I had been looking for all along.
+As I touched my face, feeling the smoothness beneath my fingertips, I couldn't help but smile. The wish had worked. The river goddess—Osimiri—had granted me the skin I had longed for. But as my excitement surged, something deep inside me hesitated. I remembered Yimika's warning: "Be careful. Osimiri doesn’t give without a price."
+But I didn’t have time to dwell on it. I had a message from Akin.
+“Hey, I’m in town! Can’t wait to see you. Been dreaming of your face the whole time I was away.”
+My heart raced. I quickly replied, “Same here! Can’t wait to see you too!”
+I stared at my reflection one more time before I dashed out of the apartment to meet him.
+When we met, I could see Akin's eyes light up. His face broke into a wide grin as he took me in, and for a moment, I felt the weight of all the insecurities I had carried for so long fall away. The person he had fallen for—this perfect version of me—was finally standing right in front of him.
+“You look... amazing,” Akin said, as if searching for words.
+I smiled, feeling a warmth spread through me. I was finally the person I always wanted to be in his eyes. But as I basked in his admiration, there was a strange, gnawing feeling deep within me. I ignored it, though, choosing instead to enjoy the moment.
+We spent the entire day together, walking through markets, laughing, and talking about everything we had missed during our time apart. For the first time in forever, I felt beautiful—truly, undeniably beautiful. Akin made me feel like I was perfect just as I was. He never once questioned my appearance or seemed concerned about anything that had ever plagued me before.
+But when I returned home that night, something strange happened.
+I stared at my reflection in the mirror, expecting the same glowing face that had greeted me that morning. But instead, I saw it. The edges of the perfect skin I had worked so hard for were beginning to fade—slowly, at first, like a soft, almost imperceptible blur. My face that had been flawless just hours ago now looked... different. Pockmarks began to reappear. Small, angry red bumps surfaced along my cheeks, and the smooth texture I had so eagerly admired was slipping away, bit by bit.
+I stepped closer to the mirror, my breath shallow, panic rising within me.
+What is happening?
+I didn’t understand. I had gotten exactly what I wanted. My skin had been perfect—for him. But not for me.
+In the days that followed, the change became more pronounced. By the time I saw Akin again, the illusion had started to crumble completely. My face was starting to look worse than it ever had.
+The problem was, when I was with him, the perfection stayed. Akin never saw the blemishes, the way my skin was deteriorating. It was like the goddess had cursed me with a twisted trick—my beauty only remained when he was around, but when I was alone, my face returned to its former state. The acne, the scars, everything. My reflection was a cruel reminder of what I had bargained for.
+I called Yimika, desperate. But her line wasn’t going through, so I decided to go to her house and since It was impromptu I made an awful decision of taking public transport and that’s when it happened, immediately, I entered the bus, I could feel stares on me and I was wondering what was wrong, I took out my tiny mirror and I saw huge boil like sores on my face, the raggedly looking conductor looked at me and said “Aunty, why your face be like dis”, the lagos girl in me, quicky retorted “Oga, wetin be your concern”, he looked at me and mockingly said “all this Lagos girls their own na to use different creams for face finish, see the way kro kro full your face and you old oo, how you go find husband like this” that set a fire ablaze in my heart and I immediately gave him a slap, he dragged my shirt and before you know it, we were outside the bus on the road and given an heading on instablog “Lagos babe beats bus conductor on third mainland bridge”
+<small><em>April 22, 2025 | Article at Sparkle</em></small>`
   },
   {
     title: "TAKE A SIP OF PEACE",
-    text: `
-It’s so weird how the smallest thing can happen and it would set you back ten paces, I mean you’ve stayed up all night building blocks of confidence, watching self-esteem videos, curating the perfect playlist for days when you get down and then all of a sudden the tiniest comment from somebody who you shouldn’t even take serious comes along and then it’s like all of that work come crashing down.
-
-So now, you begin an internal dilemma “Was I ever who I thought I was?”, “Who exactly am I?” “Who have I been?” And you begin to try to decipher whether what the world sees has just been a façade...`
-  }
+    text: `It’s so weird how the smallest thing can happen and it would set you back ten paces, I mean you’ve stayed up all night building blocks of confidence, watching self-esteem videos, curating the perfect playlist for days when you get down and then all of a sudden the tiniest comment from somebody who you shouldn’t even take serious comes along and then it’s like all of that work come crashing down.
+So now, you begin an internal dilemma “Was I ever who I thought I was?”, “Who exactly am I?” “Who have I been?” And you begin to try to decipher whether what the world sees has just been a façade and how you could just sit still and give a random person the chance to walk all over you and get away with it? Does that mean every other person can do the same at any time? Who really are you?
+It’s a lot of questions, I know and its funny how we never really get answers to most of them, we just have no choice but to sit still and watch some external force take control for us because it is quite evident that our minds are fickle and anything can set us off but what happens when we let in peace as our external force. What do I mean?
+We’ve concluded that we are clearly dealing with a raging storm, where everything is against us and we desperately crave that peace but lucky for us someone took his time to calm raging storms even before we came into the world, because he already knew what was going to happen, if you pick up the good Book and gently flip to Mark 4:39, its written right there “and he arose, and rebuked the wind and said to the sea “peace be still” and the wind ceased and there was a great calm” shocking right? Trust me I know, that’s why I have decided to connect to a much peaceful external force and make Jesus the center of my life because I want to understand that power to calm raging storms and take a sip of it.
+<small><em>February 17, 2025 | Article at <strong>Sparkle</strong></em></small>`
+  },
+  {
+    title: "What is a Slave Society?",
+    text: ` <img src="slave.jpeg" alt="slaveimage" class="story-img"> 
+    I think we can all agree that, generally, people try to avoid conversations that lead to or point to the word “slave.” It’s a term that carries heavy historical baggage, something deeply sacred and undeniably scary. And yes, it is scary, and it is sacred — but maybe that’s the very reason we avoid it so much. In doing so, we forget to talk about the modern-day slavery we’ve allowed ourselves to live in. It’s the kind of slavery that may not involve chains or physical captivity, but it is still a form of control, and it’s one that we, as a society, have become complicit in.
+As a young person, I’ve had the chance to explore and navigate various environments. I’ve walked into religious, social, and even formal institutions where I immediately felt different simply because of how I looked — because I wasn’t dressed in what they deemed “modern enough.”
+According to them, the most appropriate way to present myself was in long straight wigs or sleekly styled hair. And let’s be real — I find that approach somewhat repulsive, because as an African, my hair is not sleek, and it simply cannot be sleeked in the way they demand. Why should I spend money on products that are not aligned with my natural beauty, just to fit into someone else’s narrow idea of “perfection”?
+But we can’t entirely blame these institutions or associations. If you take a deeper look into the laws and societal systems that govern us, it often feels as if the English legal system — rooted in colonial histories — holds a kind of superiority over the laws created right here in our own lands. If you were to defend a client with cases from the judicial systems of foreign countries, you’d most likely have an edge in the minds of the judges. And that’s because, over time, we’ve internalized the belief that what comes from outside — what is foreign — has greater value and authority than what is homegrown.
+We need to ask serious questions about this. I understand that these institutions claim they are “looking out for us,” trying to teach us certain principles. But personally, I question the effectiveness of these principles. Do they actually serve our growth? Or do they just perpetuate systems that force us into molds we don’t belong to?
+It’s not just the appearance standards that keep us in chains — it’s the way we have become convinced that everything “foreign” is better, that we must sacrifice our individuality, our culture, and even our comfort to fit into a structure that was never designed for us. And in the process, we’re subtly kept under control, bound by invisible shackles that demand we conform to arbitrary expectations.
+This is modern-day slavery: the slavery of conformity, of self-doubt, and of the constant battle against our own identities in favor of a standard set by others. And it’s not always visible — it’s not about physical chains — but it’s there, nonetheless, shaping the way we live, work, and view ourselves. We may not be in literal chains, but in many ways, we are still slaves to an idea of perfection that doesn’t belong to us.
+The question we need to ask is: How long will we continue to enslave ourselves to these external expectations? How long will we remain complicit in a system that doesn’t serve us, but instead keeps us in a perpetual state of submission? Modern slavery is not just about physical oppression; it’s about the mental, emotional, and social chains we wear every day, without even realizing they’re there.
+Perhaps the first step to liberation is having the courage to break free from these invisible chains — to reject the “perfect” molds that don’t fit us, and to start defining success, beauty, and identity on our own terms. After all, true freedom begins when we stop letting someone else dictate how we should live, how we should look, and how we should be.
+<small><em>April 22, 2025 | Article at Sparkle</em></small>`
+  },
+  {
+    title: "KAIMAH",
+    text: ` Kamiah had always told that story, over and over, just never the same way twice. She’d tweak it depending on who was listening. Some days it was lighter, other days it had weight. After a while, she couldn’t keep track of which version she’d told to who, so she started keeping a list in her head. Not a real list, just a quiet tally. Once a version was told, she’d mentally cross it out.
+Lanre always laughed when she told one. Not because they were funny, but because he liked watching her perform. Later, when they were alone, he’d tease her. Say things like, “I don’t even know how you keep track. You’re not exactly a genius, Kaimah.”
+He’d say it with a smile, but she felt it anyway.
+Lanre was the kind of man who didn’t need to try. One look from him and people paid attention. Women melted. Men stayed out of his way. Everything about him was smooth and easy, but Kaimah knew better. She’d seen what was underneath, the way softness could turn to something sharp. And still, she told herself it didn’t matter. She clung to the fact that he had chosen her. Out of everyone, her.
+But sometimes she wondered if the stories weren’t just lies for fun. If maybe, somewhere deep down, she was trying to slip in the truth. Like maybe if she said enough versions, someone might notice what didn’t fit. Or maybe she was just watching him. Waiting. Seeing if he’d react.
+Because there was one version she hadn’t told. The first one. The only real one.
+She remembered how heavy it felt back then, when they first met. For a second, she almost told it to him, laid it bare. But then he smiled that smile and said, “Tell me a story, Kaimah. One of your own.” And she picked the second version instead.
+Now the list in her head was getting short. Almost all the stories had been told. Just one more, she thought. One more twist.
+“Kaimah,” Lanre’s voice cut in, breaking the silence. He was watching her again, eyes soft but guarded. “You’ve been quiet.”
+“I’m thinking,” she said.
+“About which story to tell next?” he asked, touching her face the way he always did when he wanted her calm.
+She gave him a small smile. “Yeah. Something like that.”
+But this one—this one would be different.
+This one would be the truth.
+And she wasn’t going to let him walk away from it.
+<small><em>January 11, 2025 | Article at <strong>Sparkle</strong></em></small>`
+  },
+  {
+    title: "The Frame",
+    text: `<img src="frame1.jpeg" alt="firstf" class="story-img">
+    When the Truth Finally Comes Out 
+    As the frame slowly hits the floor, words are spoken, prayers are offered because the end of it all is presumed to be near. But what do words do? How do they fix the five shattered, broken pieces of the frame? I wonder: can it really be glued back together, or is it completely irreversible?
+<img src="frame2.jpeg" alt="secondf" class="story-img">
+The First Piece
+If anything could own pride as much as the first piece, it would be a non-existent concept. It stands ready to fight, to stop anyone who dares to decipher its hidden messages. It lives a life of pretense, fooling not just the onlookers but even, at times, the other pieces. Strong, unyielding, it believes that all of its actions are perfect, pure, and true. It sees no mistakes or faults in itself but seeks out every misstep that occurs, looking to expose them. The very aura of fear it projects forces the other pieces to portray false perfection in its presence.
+Its edges are sharp, filled with bullets — metaphors of its readiness to inflict harm, to exact fear on any who stand too close. Its body is cloaked in a veneer of invincibility, ready to rain its power over everything and everyone. It prefers two pieces of the frame to the others, but it continues the façade of love for the remaining two, as if bound by duty. One particular piece, the one that dares to resemble it, bears the brunt of its disdain. It’s a hatred so intense that all the other pieces can only watch in pity, knowing that if any words are spoken, the hate might be turned on them.
+<img src="frame3.jpeg" alt="thirdf" class="story-img">
+The Second Piece
+This piece could have an entire book written about it, and it would surely be titled The Diary of the Most Frustrated Piece of the Frame. If such a thing existed, this piece would have it in spades. Burdened with resentment, it is consumed by anger towards itself, towards the other pieces, and towards the world at large. It has decided that the only way to release its pain is by passing it on — by breaking down the three smaller pieces, for they are powerless to resist.
+Among the three smaller pieces, one particular one becomes its target, a constant victim in an endless cycle of verbal assaults. It takes the anger that is passed to it from the first piece and funnels it into this poor piece, ensuring the venom is delivered in the most vile and destructive ways possible.
+This piece finds a cruel satisfaction in using words as weapons, delivering judgments without mercy. Its tongue weaves lies or distorts the truth, painting the other pieces in the darkest light, only to gain a modicum of affection from the first piece. In this twisted exchange, it feels validated, as though receiving a tiny scrap of love in return for the havoc it wreaks. But deep down, this piece knows that the love it craves will never be enough to mend the cracks in its own brokenness.
+<img src="frame4.jpeg" alt="fourthf" class="story-img">
+The Third Piece
+The third piece exists in a state of quiet suffering. It stands between the chaos of the first two, caught in their crossfire, yet it is too afraid to speak. The silence weighs heavily on this piece — an unspoken understanding of its inferiority in the eyes of the others. It is neither strong like the first piece nor angry like the second, but instead, it simply exists, a ghost in the frame, silently hoping for peace.
+But peace is a luxury it cannot afford. Every word spoken by the second piece echoes through its core, every action of the first piece a reminder of its own inadequacy. This piece longs to break free, to escape the cycle of manipulation and hatred, but how can it, when the frame is so tightly wound around it?
+<img src="frame5.jpeg" alt="fifthf" class="story-img">
+The Fourth and Fifth Pieces
+The fourth and fifth pieces, small and powerless, are resigned to their roles as pawns in this fractured puzzle. They are the ones that feel the weight of the words, the judgments, the hatred. They are the ones who feel invisible, as if the entire frame was built for a higher purpose that they were never meant to fulfill.
+Yet, in their smallness, there is a flicker of hope. The hope that, perhaps, if they speak — if they can find a way to make their voices heard — the frame might somehow be mended, that they might finally find their place in the puzzle, not as broken pieces, but as integral parts of something whole.
+The Moment of Truth
+As the frame shatters further, it’s no longer just a matter of fixing the cracks. It’s about confronting the pieces for what they truly are. The first piece, strong yet fragile, the second, broken and bitter, the third, quiet and suffering, the fourth and fifth, forgotten and small — each has their own truth. And as the final word is spoken, as the prayers are offered, the frame may not be able to be put back together. But perhaps, in the unraveling, in the revealing of all the secrets that the truth has held, there will be a chance for healing.
+Not every crack can be filled, but the pieces can learn to live with them. And in that acceptance, perhaps they can finally stop pretending to be what they are not. Perhaps, in their brokenness, they can find a kind of beauty.
+Because, after all, even the shattered pieces have a place in the frame
+<small><em>January 11, 2025 | Article at <strong>Sparkle</strong></em></small>`
+  },
+  {
+    title: "To ask what right people have to a healthy environment is to ask what right they have to breathe.",
+    text: ` How do you live in a healthy environment when there is an influx of toxic, harmful and damaging substances that destroy human movement and interactions,
+          Wait a second, what really is this environment?
+          <img src="trees.jpeg" alt="treesimage" class="story-img">
+Well, Bell and McGillivray have admitted that “environment” is a difficult word to define but Garner in the Black’s law dictionary defined the term as the totality of physical, economic, aesthetic and social circumstances and factors which surround and affect the desirability and value of property, and which also affect the quality of people’s lives.
+We need to understand that Human rights and the environment are intertwined; human rights cannot be enjoyed without a safe, clean and healthy environment and sustainable environmental governance cannot exist without the establishment of and respect for human rights.
+Recently, this relationship has been globally recognized as the right to a healthy environment is enshrined in over 100 constitutions, even in the bible, it can be perceived that God ensured that a good environment was created for mankind before even thinking of creating mankind.
+Let me drop some facts here, did you know that the right to a healthy environment has rapidly gained constitutional protection around the world and In at least 20 countries, recognition of the right to a healthy environment first occurred through court decisions determining that it’s implicit in other constitutional provisions, primarily the right to life.
+Furthermore, many scholars have argued that because clean air, clean water, fertile soil, and functioning eco systems are integral to human survival and wellbeing they must be included in the right to life and health. Among the 192 countries belonging to the United Nations, 90 countries explicitly recognize the right to a healthy environment, examples Norway, Poland, South Africa, South Korea, Russia, Netherlands, Maldives, amongst others. For instance, section 112 of the Norwegian constitution provides that:
+“Every person has the right to an environment that is conducive to health and to a natural environment whose productivity and diversity are maintained”
+In a nutshell, the right to a healthy environment is spreading across the globe in international agreements, constitutions, environmental legislations and court decisions. Even in countries where the constitution does not explicitly include the right to a healthy environment, courts have often ruled that this right is implicit in the right to life, right to health, or the government duty to protect the environment.
+<small><em>January 01, 2025 | Article at <strong>Sparkle</strong></em></small>`
+  },
 ];
 
+/* =========================
+   FADE IN EFFECT
+========================= */
 function fadeIn(element) {
   element.style.opacity = 0;
   element.style.display = "block";
-  let op = 0;
+  let opacity = 0;
+
   const timer = setInterval(() => {
-    if (op >= 1) clearInterval(timer);
-    element.style.opacity = op;
-    op += 0.05;
+    if (opacity >= 1) {
+      clearInterval(timer);
+    }
+    element.style.opacity = opacity;
+    opacity += 0.05;
   }, 20);
 }
 
+/* =========================
+   SHOW FULL STORY
+========================= */
 function showStory(index) {
-  document.getElementById("preview-page").style.display = "none";
+  const previewPage = document.getElementById("preview-page");
   const fullStory = document.getElementById("full-story");
+
+  previewPage.style.display = "none";
+
   document.getElementById("story-title").innerText = stories[index].title;
-  document.getElementById("story-text").innerText = stories[index].text;
+
+  document.getElementById("story-text").innerHTML =
+    stories[index].text.replace(/\n/g, "<br><br>");
+
   fadeIn(fullStory);
 }
 
+/* =========================
+   BACK TO PREVIEW
+========================= */
 function showPreview() {
+  const previewPage = document.getElementById("preview-page");
   const fullStory = document.getElementById("full-story");
+
   fullStory.style.display = "none";
-  fadeIn(document.getElementById("preview-page"));
+  fadeIn(previewPage);
 }
 </script>
 

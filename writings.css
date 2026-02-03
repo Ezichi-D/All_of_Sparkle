@@ -2,92 +2,159 @@
 .writing-page {
   font-family: Georgia, serif;
   background-color: #f7f6fb;
-  color:black;
+  color: purple;
 }
 
 /* Container */
 .writing-page .contain {
-  width:60%;
-  max-width:700px;
-  margin:0 auto;
-  padding:50px 0;
+  width: 60%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 50px 0;
 }
 
 /* Heading */
 .writing-page h1 {
-  text-align:center;
-  font-size:2.8rem;
-  margin-bottom:50px;
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 50px;
+}
+
+/* Story Row */
+.story-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 /* Story Previews */
-.writing-page .story-preview {
-  margin:50px 0;
-  cursor:pointer;
+.story-preview {
+  flex: 1 1 48%;
+  cursor: pointer;
   transition: transform 0.2s;
+  margin-bottom: 20px;
 }
 
-.writing-page .story-preview:hover {
-  text-decoration: underline;
-  text-decoration-color: rgb(191, 0, 255);
-  transform: scale(1.02);
+.story-preview:hover {
+  color: violet;
+  transform: translateY(-5px);
+
 }
 
-.writing-page .story-title {
-  font-weight:bold;
-  font-size:1.8rem;
-  margin-bottom:10px;
+.story-title {
+  font-weight: bold;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
 }
 
-.writing-page .story-text {
-  font-size:1.2rem;
-  line-height:1.8;
+.story-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
 }
 
-.writing-page .click-hint {
-  font-size:0.9rem;
-  color:gray;
-  margin-top:5px;
+.click-hint {
+  font-size: 0.9rem;
+  color: gray;
+  margin-top: 5px;
+}
+
+.preview-img {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
 }
 
 /* Full Story Page */
-.writing-page .full-story {
-  display:none;
-  text-align:center;
-  opacity:0;
+.full-story {
+  display: none;
+  text-align: center;
+  opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }
 
-.writing-page #story-title {
-  font-weight:bold;
-  font-size:2rem;
-  margin-bottom:30px;
+#story-title {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 30px;
 }
 
-.writing-page #story-text {
-  font-size:1.2rem;
-  line-height:1.8;
+#story-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
   white-space: pre-wrap;
-  text-align:left;
+  text-align: left;
 }
 
-.writing-page .back {
-  margin-top:50px;
-  cursor:pointer;
-  font-size:1rem;
-  color:gray;
+.back {
+  margin-top: 50px;
+  cursor: pointer;
+  font-size: 1rem;
+  color: gray;
 }
 
-.writing-page .back:hover {
-  text-decoration:underline;
+.back:hover {
+  text-decoration: underline;
 }
 
 /* Fade-in animation for previews on load */
-.writing-page .fade {
-  opacity:0;
+.fade {
+  opacity: 0;
   animation: fadeIn 0.8s forwards;
 }
 
+.story-img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin: 24px 0;
+}
+
+/* Media Queries */
+@media (max-width: 700px) {
+  .story-preview {
+    flex: 1 1 100%;
+  }
+}
+
 @keyframes fadeIn {
-  to { opacity:1; }
+  to { opacity: 1; }
+}
+
+/* ===== PREVIEW PAGE ONLY (override centering) ===== */
+.preview-layout {
+  width: 90% !important;
+  max-width: 1200px !important;
+  margin: 0 auto;
+}
+
+/* Keep stories side by side */
+.preview-layout .story-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Preview images */
+.preview-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Two per row */
+.preview-layout .story-preview {
+  flex: 1 1 calc(50% - 20px);
+  margin-bottom: 20px;
+}
+
+
+/* Mobile fallback */
+@media (max-width: 700px) {
+  .preview-layout .story-preview {
+    flex: 1 1 100%;
+  }
 }
