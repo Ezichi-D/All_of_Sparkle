@@ -11,24 +11,17 @@
 
   <!-- NAVIGATION -->
  <header>
-  <nav class="navbar">
-    <div class="nav-container">
-      <div class="logo">
-        <a href="index.html"><h2>SPARKLE</h2></a>
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <a href="index.html"><h2>SPARKLE</h2></a>
+        </div>
       </div>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience-skills">Experience</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+    </nav>
 
   <!-- HERO / INTRO -->
   <section class="hero-section">
-    <img src="sparklegrad1.jpg" alt="">
-    <h1>Hi, I'm Sparkle</h1>
+    <h1>Sparkle</h1>
     <p>Voice‑over Artist • Broadcaster • Storyteller</p>
   </section>
    </header>
@@ -83,23 +76,38 @@ packed with a bunch of information just for you.</p>
         </div>
       </div>
     </footer>
-        <script>
-          
-          var tablinks = document.getElementsByClassName("tab-links");
-          var tabcontents = document.getElementsByClassName("tab-contents");
+       
+  <!-- JAVASCRIPT FORM HANDLER -->
+  <script>
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('status');
 
-          function opentab(tabname){
-            for(tablink of tablinks){
-                tablink.classList.remove("active-link");
-            }
-            for(tabcontent of tabcontents){
-                tabcontent.classList.remove("active-tab");
-            }
-            event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab");
-          }
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const data = {
+        name: form.name.value,
+        email: form.email.value,
+        message: form.message.value
+      };
 
-        </script>
+      fetch('PASTE_YOUR_GOOGLE_SCRIPT_URL_HERE', {
+        method: 'POST',
+        body: JSON.stringify(data)
+      })
+      .then(resp => resp.json())
+      .then(res => {
+        if(res.result === "success"){
+          status.innerText = "Message sent! Thank you.";
+          form.reset();
+        } else {
+          status.innerText = "Error — try again later.";
+        }
+      })
+      .catch(err => {
+        status.innerText = "Error — try again later.";
+      });
+    });
+  </script>
 
 </body>
 </html>

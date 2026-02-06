@@ -11,31 +11,83 @@
 
   <!-- NAVIGATION -->
  <header>
-  <nav class="navbar">
-    <div class="nav-container">
-      <div class="logo">
-        <a href="index.html"><h2>SPARKLE</h2></a>
-
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <a href="index.html"><h2>SPARKLE</h2></a>
+        </div>
       </div>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience-skills">Experience</a></li>
-        <li><a href="#projects">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+    </nav>
 
   <!-- HERO / INTRO -->
   <section class="hero-section">
-    <h1>Hi, I'm Sparkle</h1>
+    <h1>Sparkle</h1>
     <p>Voice‑over Artist • Broadcaster • Storyteller</p>
   </section>
    </header>
    <main>
-    <br>
-    <br>
-    <audio controls>
-      <source src="voice1.m4a">
-    </audio>
+    <section id="projects" class="projects-section">
+    <div class="container">
+      <h2>Voice Over</h2>
+      
+      <!-- Voice Samples -->
+      <div class="project-cards">
+        <div class="project-card">
+          <h3>Voice Over 1</h3>
+          <audio controls>
+            <source src="voice1.m4a" type="audio/mp3" />
+          </audio>
+        </div>
+
+        <div class="project-card">
+          <h3>Voice Over 2</h3>
+          <audio controls>
+            <source src="media/voice2.mp3" type="audio/mp3" />
+          </audio>
+        </div>
+
+        <div class="project-card">
+          <h3>Voice Over 3</h3>
+          <audio controls>
+            <source src="media/podcast1.mp3" type="audio/mp3" />
+          </audio>
+        </div>
+      </div>
+    </div>
+  </section>
    </main>
+
+   <!-- JAVASCRIPT FORM HANDLER -->
+  <script>
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('status');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const data = {
+        name: form.name.value,
+        email: form.email.value,
+        message: form.message.value
+      };
+
+      fetch('PASTE_YOUR_GOOGLE_SCRIPT_URL_HERE', {
+        method: 'POST',
+        body: JSON.stringify(data)
+      })
+      .then(resp => resp.json())
+      .then(res => {
+        if(res.result === "success"){
+          status.innerText = "Message sent! Thank you.";
+          form.reset();
+        } else {
+          status.innerText = "Error — try again later.";
+        }
+      })
+      .catch(err => {
+        status.innerText = "Error — try again later.";
+      });
+    });
+  </script>
+  
+</body>
+</html>
