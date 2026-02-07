@@ -306,6 +306,17 @@ a {
   border-radius: 8px;
   max-width: 380px;
   text-align: center;
+  border: 5px;
+  border-radius: 10px;
+  background: violet;
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.project-card:hover {
+  color: violet;
+  transform: translateY(-5px);
+  box-shadow: 5px 6px 18px purple;
+  transform: translateY(-2px);
 }
 
 .project-card h3 {
@@ -318,9 +329,15 @@ a {
 
 /* CONTACT */
 .contact-section {
-  padding: 60px 20px;
+  padding: 60px 50px;
   background: #f9f9f9;
 }
+
+#contactForm {
+  margin-right: 300px;
+  margin-top: -150px;
+}
+
 
 .contact-section form {
   display: flex;

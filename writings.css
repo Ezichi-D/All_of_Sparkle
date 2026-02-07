@@ -33,12 +33,19 @@
   cursor: pointer;
   transition: transform 0.2s;
   margin-bottom: 20px;
+  max-width: 600px;
+  border: 5px;
+  border-radius: 10px;
+  background: #fff;
+  transition: box-shadow 0.3s, transform 0.2s;
 }
 
 .story-preview:hover {
   color: violet;
   transform: translateY(-5px);
-
+  box-shadow: 5px 6px 18px violet;
+  transform: translateY(-2px);
+  
 }
 
 .story-title {
@@ -71,6 +78,7 @@
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }
+
 
 #story-title {
   font-weight: bold;
@@ -171,4 +179,12 @@
   .preview-layout .story-preview {
     flex: 1 1 100%;
   }
+}
+
+.full-story {
+  display: none;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  max-width: fit-content;
 }
